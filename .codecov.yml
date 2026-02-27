@@ -1,0 +1,20 @@
+# Codecov configuration
+# Docs: https://docs.codecov.com/docs/codecov-yaml
+
+coverage:
+  status:
+    project:
+      default:
+        target: 80%          # fail if overall coverage drops below 80%
+        threshold: 2%        # allow 2% drop before failing
+    patch:
+      default:
+        target: 70%          # new code in PRs must be at least 70% covered
+
+comment:
+  layout: "reach,diff,flags,files"
+  behavior: default
+  require_changes: true     # only comment if coverage changed
+
+ignore:
+  - "**/*_example_test.go"

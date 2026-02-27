@@ -1,0 +1,32 @@
+# golangci-lint configuration
+# Docs: https://golangci-lint.run/usage/configuration/
+
+run:
+  timeout: 5m
+  tests: true
+
+linters:
+  enable:
+    - gofmt        # standard formatting
+    - govet        # go vet checks
+    - staticcheck  # SA rules (replaces deprecated megacheck)
+    - errcheck     # unchecked errors
+    - ineffassign  # ineffectual assignments
+    - misspell     # spelling mistakes in comments
+    - godoc        # godoc comment format
+    - revive       # drop-in replacement for golint
+
+linters-settings:
+  godoc:
+    check-all: true
+  revive:
+    rules:
+      - name: exported
+        severity: warning
+
+issues:
+  exclude-rules:
+    # Allow shadowing in test files (common pattern)
+    - path: "_test.go"
+      linters:
+        - govet
