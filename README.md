@@ -1,4 +1,4 @@
-# collection
+# go-collection
 
 > Laravel-style fluent collections for Go — type-safe, generic, zero-dependency.
 
@@ -263,4 +263,4 @@ go test -run TestChaining -v ./...                        # single test
 
 ## License
 
-MIT © 2024
+MIT © 2026
